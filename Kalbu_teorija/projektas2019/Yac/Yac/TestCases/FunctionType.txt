@@ -1,0 +1,15 @@
+mainA : Int = {
+    return 1;
+}
+
+mainB x : Float = {
+    return 1;
+}
+
+mainC : Either Error Int = {
+    return 1;
+}
+
+mainD x : Either Error Float = {
+    return 1;
+}

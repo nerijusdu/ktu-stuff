@@ -1,0 +1,9 @@
+﻿{Statements =
+  [Declare
+     (DeclareConst
+        (Identifier "a",
+         Arit (Add (NumId (Identifier "x"),NumId (Identifier "y")))));
+   Declare (DeclareConst (Identifier "w",Arit (Div (Integer 5,Integer 2))));
+   Declare (DeclareConst (Identifier "z",Arit (Mult (Integer 5,Integer 2))));
+   Declare (DeclareConst (Identifier "y",Arit (Sub (Integer 5,Integer 2))));
+   Declare (DeclareConst (Identifier "x",Arit (Add (Integer 5,Integer 2))))];}

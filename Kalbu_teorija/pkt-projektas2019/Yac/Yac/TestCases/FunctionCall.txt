@@ -1,0 +1,10 @@
+﻿noArgs = {
+	return 5;
+}
+
+main x = {
+	noArgs;
+	return x;
+}
+
+main 1;

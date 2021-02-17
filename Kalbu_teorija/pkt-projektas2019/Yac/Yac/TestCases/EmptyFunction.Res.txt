@@ -1,0 +1,3 @@
+﻿{Statements =
+  [Declare
+     (FunctionDeclare (Identifier "main",BlockStmts (None,None),None,None,None))];}

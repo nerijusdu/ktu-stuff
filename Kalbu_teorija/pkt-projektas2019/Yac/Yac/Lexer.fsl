@@ -1,0 +1,104 @@
+{
+
+module Lexer
+
+open Microsoft.FSharp.Text.Lexing
+open System
+open Parser
+
+exception SyntaxError of string
+
+let lexeme = LexBuffer.LexemeString
+
+let newline (lexbuf: LexBuffer<_>) = 
+  lexbuf.StartPos <- lexbuf.StartPos.NextLine
+  
+let keywords =  
+  [
+    "return", RETURN;
+    "if", IF;
+    "else", ELSE;
+    "throw", THROW;
+    "Either", EITHER;
+  ] |> Map.ofList
+
+let ops =   
+  [   
+    "==",   EQ;   
+    "<",    LT;   
+    "<=",   LE;   
+    ">",    GT;   
+    ">=",   GE;   
+  ] |> Map.ofList   
+
+let types =
+  [
+    "Int", INTEGER;
+    "Float", FLOATING;
+    "String", STRINGTYPE;
+    "Boolean", BOOLEAN;
+    "Error", ERROR;
+  ] |> Map.ofList
+
+}
+
+let digit = ['0'-'9']
+let int = '-'?digit+
+let frac = '.' digit*
+let exp = ['e' 'E'] ['-' '+']? digit+
+let float = '-'?digit* frac? exp?
+let id = ['a'-'z' 'A'-'Z']+
+let string = ['"']([^'"']+)['"']
+
+let space = [' ' '\t' ]
+let newline = ('\n' | '\r' '\n')
+let operator = ">" | ">=" | "<" | "<=" | "=="
+let datatype = "Int" | "Float" | "String" | "Boolean" | "Error"
+
+
+rule tokenstream = parse
+
+// Data Types
+| int		{ INT (int (lexeme lexbuf)) }
+| float		{ FLOAT (float (lexeme lexbuf)) }
+| "true"	{ TRUE }
+| "false"	{ FALSE }
+
+// Symbols
+| '"'		{ QUOTE } 
+| '{'		{ BLOCK_START }
+| '}'		{ BLOCK_END }
+| '['		{ SET_START }
+| ']'		{ SET_END }
+| ":="		{ DECLARE }
+| "="		{ ASSIGN }
+| "&&"		{ AND }
+| "||"		{ OR }
+| ','		{ COMMA }
+| ';'		{ SEMICOLON }
+| ':'		{ COLON }
+| '+'		{ ADD }
+// TODO: fails without spaces; mixes up with negative numbers
+| " - "		{ SUBTRACT }
+| '*'		{ MULTIPLY }
+| '/'		{ DIVIDE }
+| space		{ tokenstream lexbuf }
+| newline	{ newline lexbuf; tokenstream lexbuf }
+| operator	{ ops.[LexBuffer<_>.LexemeString lexbuf] }
+| datatype  { types.[LexBuffer<_>.LexemeString lexbuf] }
+| string    { STRING(lexeme lexbuf) }
+| id        { match keywords.TryFind(lexeme lexbuf) with
+              | Some(token) -> token
+              | None -> ID(lexeme lexbuf) }
+
+// System functions
+| "console"	{ CONSOLE }
+
+// Control
+| "if" 		{ IF }
+| "else"	{ ELSE }
+| "return"  { RETURN }
+| "throw"	{ THROW }
+| "Either"  { EITHER }
+| eof   	{ EOF }
+| _			{ raise (Exception (sprintf "SyntaxError: Unexpected char: '%s' Line: %d Column: %d" (lexeme lexbuf) (lexbuf.StartPos.Line+1) lexbuf.StartPos.Column)) }

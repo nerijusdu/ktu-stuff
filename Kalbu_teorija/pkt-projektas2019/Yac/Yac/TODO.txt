@@ -1,0 +1,9 @@
+﻿P1 (Priority)
+	+ throw if statement // throw if a < 1;
+	+function type // fibonacci a: Either Error Int = {
+
+P2
+	anonymous function // (x) => {}
+	sequence data type // seq := [ 0, 1 ];
+	access of system functions (console, list functions)
+	PARSE ERRORS

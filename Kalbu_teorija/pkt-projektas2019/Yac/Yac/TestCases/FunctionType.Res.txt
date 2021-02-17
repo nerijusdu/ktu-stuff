@@ -1,0 +1,21 @@
+{Statements =
+  [Declare
+     (FunctionDeclare
+        (Identifier "mainD",
+         BlockStmts (None,Some (ReturnExpr (Num (Integer 1)))),
+         Some [Argument (Identifier "x")],Some TFloat,Some TError));
+   Declare
+     (FunctionDeclare
+        (Identifier "mainC",
+         BlockStmts (None,Some (ReturnExpr (Num (Integer 1)))),None,Some TInt,
+         Some TError));
+   Declare
+     (FunctionDeclare
+        (Identifier "mainB",
+         BlockStmts (None,Some (ReturnExpr (Num (Integer 1)))),
+         Some [Argument (Identifier "x")],Some TFloat,None));
+   Declare
+     (FunctionDeclare
+        (Identifier "mainA",
+         BlockStmts (None,Some (ReturnExpr (Num (Integer 1)))),None,Some TInt,
+         None))];}

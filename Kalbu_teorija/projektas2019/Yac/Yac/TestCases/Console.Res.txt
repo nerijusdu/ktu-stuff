@@ -1,0 +1,5 @@
+{Statements =
+  [WriteStmt (FileWrite (""console.txt"",Id (Identifier "y")));
+   WriteStmt (ConsoleWrite (Id (Identifier "x")));
+   Declare (DeclareConst (Identifier "y",Str (String ""print to file"")));
+   Declare (DeclareConst (Identifier "x",Str (String ""print to console"")))];}

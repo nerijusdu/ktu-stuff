@@ -1,0 +1,11 @@
+{Statements =
+  [FunctionCall (Call (Identifier "main",Some [Num (Integer 6)]));
+   Declare
+     (FunctionDeclare
+        (Identifier "main",
+         BlockStmts
+           (Some
+              [ThrowStmt
+                 (Throw (Some (Cond (Id (Identifier "x"),Gt,Num (Integer 5)))))],
+            Some (ReturnExpr (Num (Integer 1)))),
+         Some [Argument (Identifier "x")],None,None))];}

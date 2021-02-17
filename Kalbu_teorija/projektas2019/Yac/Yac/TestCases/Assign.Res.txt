@@ -1,0 +1,5 @@
+﻿{Statements =
+  [Declare (DeclareConst (Identifier "w",Num (Float 1.5)));
+   Declare (DeclareConst (Identifier "z",Bool (Boolean true)));
+   Declare (DeclareConst (Identifier "y",Str (String ""some string"")));
+   Declare (DeclareConst (Identifier "x",Num (Integer 5)))];}

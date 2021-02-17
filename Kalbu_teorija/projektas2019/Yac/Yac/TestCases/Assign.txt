@@ -1,0 +1,4 @@
+﻿x := 5;
+y := "some string";
+z := true;
+w := 1.5;

@@ -1,0 +1,9 @@
+Yac/packages/
+Yac/Yac/bin/
+Yac/Yac/obj/
+Yac/Yac/Parser.fs
+Yac/Yac/Parser.fsi
+
+Yac/.vs
+Yac/.idea
+.vscode

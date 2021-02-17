@@ -1,0 +1,12 @@
+﻿{Statements =
+  [Declare
+     (DeclareCondConst
+        (Identifier "x",
+         IfStmt
+           (And
+              (Cond (Num (Integer 1),Lt,Num (Integer 5)),
+               Or
+                 (Cond (Num (Integer 3),Eq,Num (Integer 3)),
+                  Cond (Num (Integer 6),Gt,Num (Integer 2)))),
+            BlockStmts (None,Some (ReturnExpr (Num (Integer 1)))),
+            Some (BlockStmts (None,Some (ReturnExpr (Num (Integer 9))))))))];}

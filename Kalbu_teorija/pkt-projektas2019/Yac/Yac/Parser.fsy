@@ -1,0 +1,142 @@
+﻿%{
+open AST
+%}
+
+// Data Types
+%token <int> INT
+%token <float> FLOAT
+%token <string> STRING
+%token TRUE
+%token FALSE
+
+%token INTEGER FLOATING STRINGTYPE BOOLEAN ERROR
+
+// Symbols
+%token QUOTE
+%token BLOCK_START BLOCK_END
+%token SET_START SET_END
+%token DECLARE
+%token EQ LT LE GT GE
+%token AND OR
+%token ASSIGN COMMA SEMICOLON COLON
+%token ADD SUBTRACT MULTIPLY DIVIDE
+%token <string> ID
+
+// System functions
+%token CONSOLE
+
+// Control
+%token IF
+%token ELSE
+%token RETURN
+%token THROW
+%token EITHER
+%token EOF
+
+// The start token becomes a parser function in the compiled code:
+%start start
+%type < AST.START > start
+
+%%
+
+start:  StmtList 
+        EOF { 
+                { Statements = $1 } 
+            }
+
+StmtList: 
+    | Stmt { [$1] }
+    | StmtList Stmt { $2 :: $1  }
+
+Stmt:
+	| Declaration { Declare $1 }
+	| FnCall { FunctionCall $1 }
+	| ThrowException { ThrowStmt $1 }
+
+Block: 
+    | BLOCK_START StmtList ReturnStmt BLOCK_END { BlockStmts(Some $2, Some $3) }
+    | BLOCK_START ReturnStmt BLOCK_END { BlockStmts(None, Some $2) }
+    | BLOCK_START BLOCK_END { BlockStmts(None, None) }
+
+ReturnStmt: RETURN Expr SEMICOLON { ReturnExpr($2) }
+
+Declaration:
+	| Pri_ID DECLARE Expr SEMICOLON	{ DeclareConst($1, $3) }
+	| Pri_ID DECLARE IfStmt { DeclareCondConst($1, $3) }
+	| Pri_ID ASSIGN Block { FunctionDeclare($1, $3, None, None, None) }
+	| Pri_ID COLON Type ASSIGN Block { FunctionDeclare($1, $5, None, Some $3, None) }
+	| Pri_ID COLON EITHER Error Type ASSIGN Block { FunctionDeclare($1, $7, None, Some $5, Some $4) }
+    | Pri_ID ArgsList ASSIGN Block { FunctionDeclare($1, $4, Some $2, None, None) }
+    | Pri_ID ArgsList COLON Type ASSIGN Block { FunctionDeclare($1, $6, Some $2, Some $4, None) }
+    | Pri_ID ArgsList COLON EITHER Error Type ASSIGN Block { FunctionDeclare($1, $8, Some $2, Some $6, Some $5) }
+
+FnCall:
+    | Pri_ID SEMICOLON { Call($1, None) }
+    | Pri_ID CallArgsList SEMICOLON { Call($1, Some $2) }
+
+CallArgsList:
+    | Expr { [$1] }
+    | CallArgsList Expr { $2 :: $1 }
+
+ArgsList: 
+    | Arg { [$1] }
+    | ArgsList Arg { $2 :: $1  }
+
+Arg:
+    | Pri_ID { Argument($1) }
+
+AritExpr:
+    | Pri_NumericExpr ADD Pri_NumericExpr { Add($1, $3) }
+    | Pri_NumericExpr SUBTRACT Pri_NumericExpr { Sub($1, $3) }
+    | Pri_NumericExpr MULTIPLY Pri_NumericExpr { Mult($1, $3) }
+    | Pri_NumericExpr DIVIDE Pri_NumericExpr { Div($1, $3) }
+
+IfStmt:
+    | IF Condition ASSIGN Block { IfStmt($2, $4, None) }
+	| IF Condition ASSIGN Block ELSE Block { IfStmt($2, $4, Some $6) }
+
+Condition:
+    | Expr Op Expr { Cond($1, $2, $3) }
+    | Expr Op Expr AND Condition { And(Cond($1, $2, $3), $5) }
+    | Expr Op Expr OR Condition { Or(Cond($1, $2, $3), $5) }
+
+ThrowException:
+	| THROW SEMICOLON { Throw(None) }
+	| THROW IF Condition SEMICOLON { Throw(Some $3) }
+
+//Primitives
+
+Op: EQ { Eq } | LT { Lt } | LE { Le } | GT { Gt } | GE { Ge }
+
+Type:
+    | INTEGER { TInt } 
+    | FLOATING { TFloat }
+    | STRINGTYPE { TString }
+    | BOOLEAN { TBool }
+
+Error:
+    | ERROR { TError }
+
+Expr:
+    | Pri_BooleanExpr	{ Bool $1 }
+    | Pri_NumericExpr	{ Num $1 }
+    | Pri_StringExpr	{ Str $1 }
+    | Pri_ID			{ Id $1 }
+    | AritExpr          { Arit $1 }
+
+Pri_BooleanExpr:
+    | TRUE					{ Boolean true }
+    | FALSE					{ Boolean false }
+
+Pri_NumericExpr:
+    | INT					{ Integer $1 }
+    | FLOAT                 { Float $1 }
+    | Pri_ID				{ NumId $1 }
+
+Pri_StringExpr: 
+    | STRING	            { String $1 }
+
+Pri_ID:
+    | ID					{ Identifier $1 }
+
+%%

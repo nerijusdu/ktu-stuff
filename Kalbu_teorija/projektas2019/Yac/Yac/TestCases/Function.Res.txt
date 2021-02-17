@@ -1,0 +1,7 @@
+﻿{Statements =
+  [Declare
+     (FunctionDeclare
+        (Identifier "main",
+         BlockStmts
+           (Some [Declare (DeclareConst (Identifier "x",Num (Integer 5)))],
+            Some (ReturnExpr (Id (Identifier "x")))),None,None,None))];}
