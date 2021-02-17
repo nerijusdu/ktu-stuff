@@ -1,1 +1,12 @@
 *.tmp
+*.zip
+*.dll
+*.exe
+*.log
+*.jar
+Kalbu_Teorija/Scalatron/*
+*.user
+**/.vs/
+**/Debug/
+**/Release/
+**/packages/

@@ -1,0 +1,44 @@
+-
+Audi-80 66 8.1
+Audi-A4 110 8.7
+Audi-A4 110 8.7
+Audi-A4 110 8.7
+Audi-S8 240 13.4
+Audi-RS6 420 12.5
+Audi-RS6 500 13.5
+Audi-RS6 520 14.5
+Audi-RS7 620 15.5
+Nerijus 199 11.5
+-
+BMW-E36 66 4.9
+BMW-E36 70 7.9
+BMW-E36 70 8.0
+BMW-E36 80 7.9
+BMW-E46 110 9.5
+BMW-E46 110 9.5
+BMW-E46 120 10.6
+BMW-F10 150 10.5
+BMW-E32 186 9.5
+Nerijus 199 11.5
+-
+Toyota-Avnsis 74 7.6
+Toyota-Avnsis 74 7.6
+Toyota-Corrola 74 7.1
+Toyota-Corrola 80 8.1
+Toyota-Prius 80 2.1
+Toyota-Prius 80 2.1
+Toyota-GT86 150 11.7
+Toyota-GT86 215 15.6
+Toyota-Supra 314 9.6
+Nerijus 199 11.5
+-
+Volvo-S80 100 10.9
+Volvo-S70 111 9.9
+Volvo-S60 120 8.9
+Volvo-XC60 131 10.5
+Volvo-XC60 131 10.5
+Volvo-S40 140 10.2
+Volvo-XC60 150 10.5
+Volvo-XC80 180 10.7
+Volvo-XC90 180 12.5
+Nerijus 199 11.5

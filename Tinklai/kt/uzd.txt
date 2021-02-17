@@ -1,0 +1,32 @@
+Uzd #220:
+
+1. Vepriai - 18v+10aW
+2. Siesikai - 18v+R
+3. Vidiskiai - 16v+24v
+4. Pabaiskas - 12v+20v
+5. Taujenai - 20vW+R
+
+Viesiems tinklams - 172.16.32.0/23
+Administraciniams tinklams -192.168.11.96/27
+Tarnybiniams tinklams (marsrutizatoriams) - 10.10.10.32/27
+
+
+v - viesas potinklis
+a - administracinis potinklis
+(a|v)W - wireless
++R - butinas marsrutizatorius
+
+jei yra ir v ir a - statomas marsrutizatorius
+
+kopmiuteriai jungiemai 100 Mbps UTP kabeliu, Fast Ethernet jungtimi
+komputatoriai ir marsrutizatoriai 1 Gbps UTP Gigabit Ethernet
+
+Centre - marsrutizatorius ir serveris.
+Serveryje reikia aktyvuoti HTTP ir pakeisti index.html. Jame turi būti studento vardas pavardė, užduoties varianto schema ir konfigūracijos duomenys.
+Prie wireless + 2 nesiojami kompiuteriai. Nustatyti SSID (service set identifier) ir prisijungimo slaptažodžius.
+
+Maršrutizatoriaus pavadinimą pradėti raide R,
+komutatoriaus – raide K,
+stacionaraus kompiuterio - PC,
+belaidžio įrenginio W, 
+rie jo jungiamą nešiojamą kompiuterį– N

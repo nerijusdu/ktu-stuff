@@ -1,0 +1,81 @@
+   ------ Automobiliu masyvas Nr. 1 ----------
+   |---------------|------------|-------------|
+   |Pavadinimas    |Galia       |Kuro sanaudos|
+   |---------------|------------|-------------|
+1  |Audi-80        |66          |8.10         |
+2  |Audi-A4        |110         |8.70         |
+3  |Audi-A4        |110         |8.70         |
+4  |Audi-A4        |110         |8.70         |
+5  |Audi-S8        |240         |13.40        |
+6  |Audi-RS6       |420         |12.50        |
+7  |Audi-RS6       |500         |13.50        |
+8  |Audi-RS6       |520         |14.50        |
+9  |Audi-RS7       |620         |15.50        |
+10 |Nerijus        |199         |11.50        |
+   |---------------|------------|-------------|
+
+   ------ Automobiliu masyvas Nr. 2 ----------
+   |---------------|------------|-------------|
+   |Pavadinimas    |Galia       |Kuro sanaudos|
+   |---------------|------------|-------------|
+1  |BMW-E36        |66          |4.90         |
+2  |BMW-E36        |70          |7.90         |
+3  |BMW-E36        |70          |8.00         |
+4  |BMW-E36        |80          |7.90         |
+5  |BMW-E46        |110         |9.50         |
+6  |BMW-E46        |110         |9.50         |
+7  |BMW-E46        |120         |10.60        |
+8  |BMW-F10        |150         |10.50        |
+9  |BMW-E32        |186         |9.50         |
+10 |Nerijus        |199         |11.50        |
+   |---------------|------------|-------------|
+
+   ------ Automobiliu masyvas Nr. 3 ----------
+   |---------------|------------|-------------|
+   |Pavadinimas    |Galia       |Kuro sanaudos|
+   |---------------|------------|-------------|
+1  |Toyota-Avnsis  |74          |7.60         |
+2  |Toyota-Avnsis  |74          |7.60         |
+3  |Toyota-Corrola |74          |7.10         |
+4  |Toyota-Corrola |80          |8.10         |
+5  |Toyota-Prius   |80          |2.10         |
+6  |Toyota-Prius   |80          |2.10         |
+7  |Toyota-GT86    |150         |11.70        |
+8  |Toyota-GT86    |215         |15.60        |
+9  |Toyota-Supra   |314         |9.60         |
+10 |Nerijus        |199         |11.50        |
+   |---------------|------------|-------------|
+
+   ------ Automobiliu masyvas Nr. 4 ----------
+   |---------------|------------|-------------|
+   |Pavadinimas    |Galia       |Kuro sanaudos|
+   |---------------|------------|-------------|
+1  |Volvo-S80      |100         |10.90        |
+2  |Volvo-S70      |111         |9.90         |
+3  |Volvo-S60      |120         |8.90         |
+4  |Volvo-XC60     |131         |10.50        |
+5  |Volvo-XC60     |131         |10.50        |
+6  |Volvo-S40      |140         |10.20        |
+7  |Volvo-XC60     |150         |10.50        |
+8  |Volvo-XC80     |180         |10.70        |
+9  |Volvo-XC90     |180         |12.50        |
+10 |Nerijus        |199         |11.50        |
+   |---------------|------------|-------------|
+
+   ************
+    Rezultatai
+   ************
+   |------------------------------------------------------------|------------|-------------|
+   |Sujungti pavadinimai                                        |Galia       |Kuro sanaudos|
+   |------------------------------------------------------------|------------|-------------|
+1  |Audi-80        BMW-E36        Toyota-Avnsis  Volvo-S80      |306         |31.50        |
+2  |Audi-A4        BMW-E36        Toyota-Avnsis  Volvo-S70      |365         |34.10        |
+3  |Audi-A4        BMW-E36        Toyota-Corrola Volvo-S60      |374         |32.70        |
+4  |Audi-A4        BMW-E36        Toyota-Corrola Volvo-XC60     |401         |35.20        |
+5  |Audi-S8        BMW-E46        Toyota-Prius   Volvo-XC60     |561         |35.50        |
+6  |Audi-RS6       BMW-E46        Toyota-Prius   Volvo-S40      |750         |34.30        |
+7  |Audi-RS6       BMW-E46        Toyota-GT86    Volvo-XC60     |920         |46.30        |
+8  |Audi-RS6       BMW-F10        Toyota-GT86    Volvo-XC80     |1065        |51.30        |
+9  |Audi-RS7       BMW-E32        Toyota-Supra   Volvo-XC90     |1300        |47.10        |
+10 |Nerijus        Nerijus        Nerijus        Nerijus        |796         |46.00        |
+   |------------------------------------------------------------|------------|-------------|

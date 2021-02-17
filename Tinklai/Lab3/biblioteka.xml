@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="biblioteka.xsl"?>
+<Biblioteka
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="biblioteka.xsd">
+    <Knyga>
+        <Pavadinimas>Knyga1</Pavadinimas>
+        <Autorius>Autorius1</Autorius>
+        <Metai>2001</Metai>
+        <Skaičius>15</Skaičius>
+    </Knyga>
+    <Knyga>
+        <Pavadinimas>Knyga2</Pavadinimas>
+        <Autorius>Autorius2</Autorius>
+        <Metai>2010</Metai>
+        <Skaičius>45</Skaičius>
+    </Knyga>
+    <Knyga>
+        <Pavadinimas>Knyga3</Pavadinimas>
+        <Autorius>Autorius3</Autorius>
+        <Metai>2006</Metai>
+        <Skaičius>37</Skaičius>
+    </Knyga>
+</Biblioteka>

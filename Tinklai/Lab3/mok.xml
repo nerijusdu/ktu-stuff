@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="mok.xsl"?>
+<Mokėjimai
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="mok.xsd">
+    <Organizacija> KTU Informatikos fakultetas </Organizacija>
+    <Data>2017-05-25</Data>
+    <Pavedimas>
+        <Sąskaita>S009 999</Sąskaita>
+        <Gavėjas>
+            <Pavadinimas>Mokesčių inspekcija</Pavadinimas>
+            <Bankas>Swedbank</Bankas>
+            <Sąskaita>9988 7766 55</Sąskaita>
+        </Gavėjas>
+        <Suma>
+            <Dydis>155.99</Dydis>
+            <Valiuta>EUR</Valiuta>
+        </Suma>
+    </Pavedimas>
+    <Pavedimas>
+        <Sąskaita>S009 907</Sąskaita>
+        <Gavėjas>
+            <Pavadinimas>Manchester Metropolitan University </Pavadinimas>
+            <Bankas>Barclays Bank Delaware</Bankas>
+            <Sąskaita>9988 7766 55</Sąskaita>
+        </Gavėjas>
+        <Suma>
+            <Dydis>212,55</Dydis>
+            <Valiuta>GBP</Valiuta>
+        </Suma>
+    </Pavedimas>
+    <Pavedimas>
+        <Sąskaita>S009 907</Sąskaita>
+        <Gavėjas>
+            <Pavadinimas>Nerijus Dulkė</Pavadinimas>
+            <Bankas>SEB</Bankas>
+            <Sąskaita>1234 5678 91011</Sąskaita>
+        </Gavėjas>
+        <Suma>
+            <Dydis>123,45</Dydis>
+            <Valiuta>EUR</Valiuta>
+        </Suma>
+    </Pavedimas>
+</Mokėjimai>
