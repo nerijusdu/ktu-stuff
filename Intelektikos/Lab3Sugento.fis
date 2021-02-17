@@ -1,0 +1,84 @@
+[System]
+Name='Lab3Sugeno'
+Type='sugeno'
+Version=2.0
+NumInputs=3
+NumOutputs=1
+NumRules=0
+AndMethod='prod'
+OrMethod='probor'
+ImpMethod='prod'
+AggMethod='sum'
+DefuzzMethod='wtaver'
+
+[Input1]
+Name='Greitis'
+Range=[0 110]
+NumMFs=3
+MF1='mazas':'zmf',[50 70]
+MF2='vidutinis':'pimf',[60 70 80 90]
+MF3='reikiamas':'smf',[80.0848111025443 100.084811102544]
+
+[Input2]
+Name='AtstumasIkiKliuties'
+Range=[0 50]
+NumMFs=4
+MF1='pavojingas':'zmf',[5 10]
+MF2='mazas':'pimf',[5 10 15 20]
+MF3='saugus':'smf',[35 45]
+MF4='vidutinis':'pimf',[15 20 35 40]
+
+[Input3]
+Name='KelioDangosBusena'
+Range=[0 3]
+NumMFs=3
+MF1='sausa':'trapmf',[-0.995 -0.995 0.85 1.15]
+MF2='slapia':'trapmf',[0.85 1.15 1.85 2.15]
+MF3='slidi':'trapmf',[1.85 2.15 3.85 4.15]
+
+[Output1]
+Name='output1'
+Range=[0 1]
+NumMFs=4
+MF1='mf1':'constant',[-4.5]
+MF2='mf2':'constant',[-3]
+MF3='mf3':'constant',[0]
+MF4='mf4':'constant',[2]
+
+[Rules]
+1 1 1, 2 (1) : 1
+2 1 1, 2 (1) : 1
+3 1 1, 1 (1) : 1
+1 1 2, 2 (1) : 1
+2 1 2, 1 (1) : 1
+3 1 2, 1 (1) : 1
+1 1 3, 1 (1) : 1
+2 1 3, 1 (1) : 1
+3 1 3, 1 (1) : 1
+1 2 1, 2 (1) : 1
+2 2 1, 2 (1) : 1
+3 2 1, 2 (1) : 1
+1 2 2, 2 (1) : 1
+2 2 2, 2 (1) : 1
+3 2 2, 1 (1) : 1
+1 2 3, 2 (1) : 1
+2 2 3, 1 (1) : 1
+3 2 3, 1 (1) : 1
+1 4 1, 3 (1) : 1
+2 4 1, 4 (1) : 1
+3 4 1, 4 (1) : 1
+1 4 2, 3 (1) : 1
+2 4 2, 4 (1) : 1
+3 4 2, 4 (1) : 1
+1 4 3, 4 (1) : 1
+2 4 3, 4 (1) : 1
+3 4 3, 2 (1) : 1
+1 3 1, 3 (1) : 1
+2 3 1, 3 (1) : 1
+3 3 1, 4 (1) : 1
+1 3 2, 3 (1) : 1
+2 3 2, 3 (1) : 1
+3 3 2, 4 (1) : 1
+1 3 3, 3 (1) : 1
+2 3 3, 4 (1) : 1
+3 3 3, 4 (1) : 1
